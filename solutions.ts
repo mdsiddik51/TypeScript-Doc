@@ -20,7 +20,7 @@ const processInput = (values: string | number | boolean) => {
 
 const formatCoordinate = (value: readonly [number, number, string]) => {
     const [latitude, longitude, locationName] = value;
-    return `Location: ${locationName} (${latitude} , ${longitude})`
+    return `Location: ${locationName} (${latitude}, ${longitude})`
 }
 
 const concatenateArrays = <T>(...arrays: T[][]) => {
@@ -37,7 +37,7 @@ interface Course {
 
 const getPopularCourses = (Course: Course[], minStudents: number) => {
     let result = [];
-    for (let data in courses) {
+    for (let data in Course) {
         if (Course[data].students > minStudents && Course[data].isPublished === true) {
             result.push(Course[data]);
         }
@@ -65,7 +65,7 @@ class Manager extends Employee {
     };
 
     getRoleInfo() {
-        return `Manager of ${this.department} : ${this.name} `
+        return `Manager of ${this.department}: ${this.name} `
     };
 };
 
