@@ -38,7 +38,7 @@ interface Course {
 const getPopularCourses = (Course: Course[], minStudents: number) => {
     let result = [];
     for (let data in Course) {
-        if (Course[data].students > minStudents && Course[data].isPublished === true) {
+        if (Course[data].students >= minStudents && Course[data].isPublished === true) {
             result.push(Course[data]);
         }
     }
